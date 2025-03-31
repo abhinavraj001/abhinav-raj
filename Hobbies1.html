@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies-Abhinav Raj</title>
+    <link rel="stylesheet" href="port1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hobbies-header {
+            padding: 8rem 5% 2rem;
+            text-align: center;
+            background-color: var(--secondary-color);
+            margin-top: 80px;
+        }
+
+        .hobbies-header h1 {
+            color: var(--heading-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hobbies-header p {
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hobbies-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hobby-card {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 4rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hobby-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hobby-header i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .hobby-header h2 {
+            color: var(--heading-color);
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .hobby-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-section {
+            margin-top: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 1;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h3 {
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <nav>
+            <div class="menu-button">
+                <i class="fas fa-bars"></i>
+                <div class="menu-dropdown">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="education1.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                        <li><a href="experience1.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+                        <!-- <li><a href="achevements1.html"><i class="fas fa-trophy"></i> Achievements</a></li> -->
+                        <li><a href="Hobbies1.html"><i class="fas fa-heart"></i> Hobbies</a></li>
+                        <li><a href="Socialmedia1.html"><i class="fab fa-share-alt"></i> Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo">
+                <!-- AR -->
+                <div class="profile-image">
+                    <img src="AR1.jpg" alt="Profile Picture">
+                    <div class="profile-overlay">
+                        <span>Welcome!</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hobbies-header">
+        <h1>My Hobbies</h1>
+        <p>Activities and interests that bring joy and creativity to the life.</p>
+    </section>
+
+    <section class="hobbies-section">
+        <!-- Photography Hobby -->
+        <div class="hobby-card">
+            <div class="hobby-header">
+                <i class="fas fa-camera"></i>
+                <h2>Photography</h2>
+            </div>
+            <p class="hobby-description">
+                Capturing moments and exploring the world through my lens. I enjoy both landscape and portrait photography,
+                experimenting with different techniques and perspectives.
+            </p>
+            <div class="gallery-section">
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="photo1.jpg" alt="Photography 1">
+                        <div class="gallery-overlay">
+                            <h3>Sunset</h3>
+                            <!-- <p>Captured during evening walk</p> -->
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="photo2.jpg" alt="Photography 2">
+                        <div class="gallery-overlay">
+                            <h3>Flower</h3>
+                            <!-- <p>Urban photography</p> -->
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="photo3.jpg" alt="Photography 3">
+                        <div class="gallery-overlay">
+                            <h3>Nature</h3>
+                            <!-- <p>Close-up shots</p> -->
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="photo4.jpg" alt="Photography 2">
+                        <div class="gallery-overlay">
+                            <h3>India Gate</h3>
+                            <!-- <p>Urban photography</p> -->
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="photo5.jpg" alt="Photography 2">
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <!-- <p>Urban photography</p> -->
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="photo7.jpg" alt="Photography 2">
+                        <div class="gallery-overlay">
+                            <h3>HYD</h3>
+                            <!-- <p>Urban photography</p> -->
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+        <!-- Reading Hobby -->
+        <div class="hobby-card">
+            <div class="hobby-header">
+                <i class="fas fa-book"></i>
+                <h2>Reading</h2>
+            </div>
+            <p class="hobby-description">
+                That sounds like a fantastic mix of reading interests! Science fiction expands the imagination, technical books deepen knowledge, and biographies provide inspiration from great innovators. Novels, on the other hand, offer immersive storytelling and emotional depth. 
+                This diverse reading habit surely enriches your perspective on both reality and the future.
+            </p>
+            <div class="gallery-section">
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="book1.jpg" alt="Reading 1">
+                        <div class="gallery-overlay">
+                            <h3>Favorite Books</h3>
+                            <p>My reading collection</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="book2.jpg" alt="Reading 2">
+                        <div class="gallery-overlay">
+                            <h3>My Book</h3>
+                            <p>Under Process</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music Hobby -->
+        <div class="hobby-card">
+            <div class="hobby-header">
+                <i class="fas fa-music"></i>
+                <h2>Listening Music</h2>
+            </div>
+            <p class="hobby-description">
+                Music has a unique power to transcend boundaries and connect people on an emotional level. It speaks to the heart, evokes memories, and creates a shared experience regardless of language or culture. 
+                Whether it's a soothing melody or an upbeat rhythm, music brings people together, making every moment more meaningful.
+            </p>
+            <div class="gallery-section">
+                <div class="gallery-grid">
+                    <a href="https://open.spotify.com/track/1p0Ov7ir3XdzvzFJmCmRk1?si=2d6dcfe749744f49" target="_blank" class="gallery-item">
+                        <img src="music1.jpg" alt="Music 1">
+                        <div class="gallery-overlay">
+                            <h3>My Favorite</h3>
+                           
+                            <i class="fab fa-spotify" style="font-size: 1.5rem; margin-top: 0.5rem;"></i>
+                        </div>
+                    </a>
+                    <a href="https://youtu.be/AGsn2ycFRqI?si=iGmXvtiNFEPwQN2d" target="_blank" class="gallery-item">
+                        <img src="music2.jpg" alt="Music 2">
+                        <div class="gallery-overlay">
+                            <h3>Music</h3>
+                            <p>Favorite</p>
+                            <i class="fab fa-youtube" style="font-size: 1.5rem; margin-top: 0.5rem;"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Travel Hobby -->
+        <div class="hobby-card">
+            <div class="hobby-header">
+                <i class="fas fa-plane"></i>
+                <h2>Travel</h2>
+            </div>
+            <p class="hobby-description">
+                Exploring new places, experiencing different cultures, and creating lasting memories through travel.
+            </p>
+            <div class="gallery-section">
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="travel3.jpg" alt="Travel 1">
+                        <div class="gallery-overlay">
+                            <h3>Mountain Trek</h3>
+                            <p>Adventure time</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="travel2.jpg" alt="Travel 2">
+                        <div class="gallery-overlay">
+                            <h3>Madhubani</h3>
+                            <p>Temple Vibes</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="photo6.jpg" alt="Travel 3">
+                        <div class="gallery-overlay">
+                            <h3>City Exploration</h3>
+                            <p>Urban adventures</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="travel4.jpg" alt="Travel 3">
+                        <div class="gallery-overlay">
+                            <h3>City Exploration</h3>
+                            <p>Hydrabad</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="travel5.jpg" alt="Travel 3">
+                        <div class="gallery-overlay">
+                            <h3>City Exploration</h3>
+                            <p>Bengaluru</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="travel6.jpg" alt="Travel 3">
+                        <div class="gallery-overlay">
+                            <h3>City Exploration</h3>
+                            <p>Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for image preview -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Hobby Image">
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/abhinavraj001"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abhinav-raj-chaurasia-393a7132b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Abhinav Raj.</p>
+    </footer>
+
+    <script src="port2.js"></script>
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+
+        function openModal(element) {
+            modal.style.display = 'flex';
+            modalImg.src = element.querySelector('img').src;
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

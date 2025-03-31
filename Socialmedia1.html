@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media - Abhinav Raj</title>
+    <link rel="stylesheet" href="port1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .social-header {
+            padding: 8rem 5% 2rem;
+            text-align: center;
+            background-color: var(--secondary-color);
+            margin-top: 80px;
+        }
+
+        .social-header h1 {
+            color: var(--heading-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-header p {
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .social-card {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            cursor: pointer;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .social-card:hover .social-icon {
+            transform: scale(1.1);
+        }
+
+        .social-content {
+            flex: 1;
+        }
+
+        .social-content h3 {
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .social-content p {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .social-content .username {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .contact-section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            background-color: var(--primary-color);
+        }
+
+        .contact-info h3 {
+            color: var(--heading-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-info p {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--heading-color);
+        }
+
+        @media (max-width: 768px) {
+            .social-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <nav>
+            <div class="menu-button">
+                <i class="fas fa-bars"></i>
+                <div class="menu-dropdown">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="education1.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                        <li><a href="experience1.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+                        
+                        <!-- <li><a href="achevements1.html"><i class="fas fa-trophy"></i> Achievements</a></li> -->
+                        <li><a href="Hobbies1.html"><i class="fas fa-heart"></i> Hobbies</a></li>
+                        <li><a href="Socialmedia1.html"><i class="fab fa-share-alt"></i> Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo">
+                
+                <div class="profile-image">
+                    <img src="AR1.jpg" alt="Profile Picture">
+                    <div class="profile-overlay">
+                        <span>Welcome!</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="social-header">
+        <h1>Connect With Me</h1>
+        <p>Find me on various social media platforms and get in touch.</p>
+    </section>
+
+    <section class="social-section">
+        <div class="social-grid">
+            <!-- Instagram -->
+            <a href="#" target="_blank" class="social-card">
+                <div class="social-icon" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="social-content">
+                    <h3>Instagram</h3>
+                    <p>Follow my daily life and photography</p>
+                    <span class="username">Update Soon</span>
+                </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/abhinav-raj-chaurasia-393a7132b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-card">
+                <div class="social-icon" style="background: #0077b5;">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="social-content">
+                    <h3>LinkedIn</h3>
+                    <p>Professional network and updates</p>
+                    <span class="username">Abhinav Raj</span>
+                </div>
+            </a>
+
+            <!-- Facebook -->
+            <a href="#" target="_blank" class="social-card">
+                <div class="social-icon" style="background: #1877f2;">
+                    <i class="fab fa-facebook"></i>
+                </div>
+                <div class="social-content">
+                    <h3>Facebook</h3>
+                    <p>Personal updates and connections</p>
+                    <span class="username">Update Soon</span>
+                </div>
+            </a>
+
+            <!-- GeeksforGeeks -->
+            <a href="https://www.geeksforgeeks.org/user/abhikrieaxi/" target="_blank" class="social-card">
+                <div class="social-icon" style="background: #2f8d46;">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="social-content">
+                    <h3>GeeksforGeeks</h3>
+                    <p>Programming articles and solutions</p>
+                    <span class="username">Abhinav Raj</span>
+                </div>
+            </a>
+
+            <!-- Medium -->
+            <a href="https://medium.com/@abhikrishan11" target="_blank" class="social-card">
+                <div class="social-icon" style="background: #000000;">
+                    <i class="fab fa-medium"></i>
+                </div>
+                <div class="social-content">
+                    <h3>Medium</h3>
+                    <p>Technical articles and blogs</p>
+                    <span class="username">@abhikrishan11</span>
+                </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/abhinavraj001" target="_blank" class="social-card">
+                <div class="social-icon" style="background: #333333;">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="social-content">
+                    <h3>GitHub</h3>
+                    <p>Code repositories and projects</p>
+                    <span class="username">@abhinavraj001</span>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/message/ZOJQGEVBDYBUO1" target="_blank" class="social-card">
+                <div class="social-icon" style="background: #25d366;">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="social-content">
+                    <h3>WhatsApp</h3>
+                    <p>Direct messaging</p>
+                    <span class="username">+91 8252947510</span>
+                </div>
+            </a>
+
+            <!-- Discord -->
+            <a href="#" target="_blank" class="social-card">
+                <div class="social-icon" style="background: #7289da;">
+                    <i class="fab fa-discord"></i>
+                </div>
+                <div class="social-content">
+                    <h3>Discord</h3>
+                    <p>Community</p>
+                    <span class="username">Update Soon</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="contact-section">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon" style="background: var(--primary-color);">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Email</h3>
+                        <a href="mailto:abhikrishan11.com">abhikrishan11@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon" style="background: var(--primary-color);">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Phone</h3>
+                        <a href="tel:+918252947510">+91 8252947510</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon" style="background: var(--primary-color);">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Location</h3>
+                        <p>Vadodara, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/abhinavraj001"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abhinav-raj-chaurasia-393a7132b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Abhinav Raj.</p>
+    </footer>
+
+    <script src="port2.js"></script>
+</body>
+</html> 

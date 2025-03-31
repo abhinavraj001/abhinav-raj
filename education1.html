@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Abhinav Raj</title>
+    <link rel="stylesheet" href="port1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .education-header {
+            padding: 8rem 5% 2rem;
+            text-align: center;
+            background-color: var(--secondary-color);
+            margin-top: 80px;
+        }
+
+        .education-header h1 {
+            color: var(--heading-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-header p {
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .education-timeline {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 2rem;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-date {
+            min-width: 150px;
+            padding: 1rem;
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .timeline-content h3 {
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .education-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .detail-card {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .detail-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-card li {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detail-card li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 150px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-date {
+                min-width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <nav>
+            <div class="menu-button">
+                <i class="fas fa-bars"></i>
+                <div class="menu-dropdown">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="education1.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                        <li><a href="experience1.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+                        
+                        <!-- <li><a href="achevements1.html"><i class="fas fa-trophy"></i> Achievements</a></li> -->
+                        <li><a href="Hobbies1.html"><i class="fas fa-heart"></i> Hobbies</a></li>
+                        <li><a href="Socialmedia1.html"><i class="fab fa-share-alt"></i> Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo">
+                <!-- AR -->
+                <div class="profile-image">
+                    <img src="AR1.jpg" alt="Profile Picture">
+                    <div class="profile-overlay">
+                        <span>Welcome!</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="education-header">
+        <h1>My Educational Journey</h1>
+        <p>From early education to higher studies, here's my academic.</p>
+    </section>
+
+    <section class="education-timeline">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">Present</div>
+            <div class="timeline-content">
+                <h3>Bachelor of Technology</h3>
+                <p>Electronics and Communication Engineering with Railway Specialization</p>
+                <p><a href="https://gsv.ac.in/" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: color 0.3s ease;">Gati Shakti Vishwavidyalaya (GSV), a Central University under the Ministry of Railways, Vadodara, Gujarat</a></p>
+                
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date"></div>
+            <div class="timeline-content">
+                <h3>Schooling</h3>
+                <p><b>12th </b></p>
+                <p>Science Stream (PCMB)</p>
+                <pre>
+
+
+                </pre>
+                <p><b>10th</b></p>
+                <p><a href="http://www.stjosephps.com/" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: color 0.3s ease;">St.Joseph Public School,Begusarai,Bihar</a></p>
+                
+            </div>
+        </div>
+
+        
+    </section>
+
+    <section class="education-details">
+        <div class="detail-card">
+            <h3>Academic Achievements</h3>
+            <ul>
+                <li>Best Teacher and Administration Award during Schooling</li>
+                <li>House Captain</li>
+                <li>Student Lead (Captain) during 12th</li>
+                <!-- <li>Completed various online certifications</li> -->
+            </ul>
+        </div>
+
+        <div class="detail-card">
+            <h3>Technical Skills</h3>
+            <!-- <p>Still Learning</p> -->
+            <ul>
+                <li>Programming Languages: C, C++, Python</li>
+                <li>Web Development: HTML, CSS, JavaScript</li>
+                <li>Tools & Technologies: Git, VS Code, AutoCAD, Keil</li>
+                <li>Embedded System</li>
+                <li>Advance Railways Signaling</li>
+                <li>Additional Skills: Problem Solving, Team Leadership</li>
+            </ul>
+        </div>
+
+        <div class="detail-card">
+            <h3>Extracurricular Activities</h3>
+            <ul>
+                <li>Member of Business Club</li>
+                <li>Participated in Hackathons</li>
+                <li>Member of Literary Club</li>
+            
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/abhinavraj001"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abhinav-raj-chaurasia-393a7132b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Abhinav Raj.</p>
+    </footer>
+
+    <script src="port2.js"></script>
+    <script>
+        // Timeline animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html> 

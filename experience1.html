@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Abhinav Raj</title>
+    <link rel="stylesheet" href="port1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .experience-header {
+            padding: 8rem 5% 2rem;
+            text-align: center;
+            background-color: var(--secondary-color);
+            margin-top: 80px;
+        }
+
+        .experience-header h1 {
+            color: var(--heading-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-header p {
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .experience-section {
+            padding: 2rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .experience-card {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .experience-image {
+            width: 120px;
+            height: 52px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .experience-content {
+            flex: 1;
+        }
+
+        .experience-content h3 {
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-content .company {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-content .duration {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-content .description {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .experience-content .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        /* here the event image */
+        .event-image {
+            width: 80px;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .event4-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .event4-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .event-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .event-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+            opacity: 0.3;
+        }
+
+        .event-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .event-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .event-content {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .event-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .event-item:nth-child(odd) .event-content {
+            margin-right: 50%;
+        }
+
+        .event-item:nth-child(odd) .event-content::before {
+            right: -60px;
+        }
+
+        .event-item:nth-child(even) .event-content {
+            margin-left: 50%;
+        }
+
+        .event-item:nth-child(even) .event-content::before {
+            left: -60px;
+        }
+
+        @media (max-width: 768px) {
+            .event-timeline::before {
+                left: 30px;
+            }
+
+            .event-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+
+            .event-content::before {
+                left: -40px !important;
+            }
+
+            .experience-card {
+                flex-direction: column;
+            }
+
+            .experience-image {
+                width: 100%;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <nav>
+            <div class="menu-button">
+                <i class="fas fa-bars"></i>
+                <div class="menu-dropdown">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="education1.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                        <li><a href="experience1.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+                        
+                        <!-- <li><a href="achevements1.html"><i class="fas fa-trophy"></i> Achievements</a></li> -->
+                        <li><a href="Hobbies1.html"><i class="fas fa-heart"></i> Hobbies</a></li>
+                        <li><a href="Socialmedia1.html"><i class="fab fa-share-alt"></i> Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo">
+                
+                <div class="profile-image">
+                    <img src="AR1.jpg" alt="Profile Picture">
+                    <div class="profile-overlay">
+                        <span>Welcome!</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="experience-header">
+        <h1>My Experience</h1>
+        <p>Professional experiences, internships, and notable events that have shaped my journey.</p>
+    </section>
+
+    <section class="experience-section">
+        <h2 class="section-title">Internships</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-image">
+                    <img src="Exp1.png" alt="Company 1 Logo">
+                </div>
+                <div class="experience-content">
+                    <h3>Indian Railway Intern(ECR)</h3>
+                    <div class="company">RNCC, Patna, Bihar</div>
+                    <div class="duration">May 2023 - June 2023</div>
+                    <div class="description">
+                        I did an internship with Indian Railways, where I gained hands-on experience with the components of LHB (Linke Hofmann Busch) coaches. I learned in detail about the pneumatic brake system used in trains and how it functions. My training included understanding the testing procedures to ensure the brakes operate safely and efficiently. 
+                            This experience gave me valuable technical knowledge about railway coach systems and their maintenance.
+                            
+                    </div>
+                    <div class="skills">
+                        <span class="skill-tag">Different arts of LHB coach:</span>
+                        <span class="skill-tag">WSP(Wheel Slide Protection Device) </span>
+                        <span class="skill-tag">Air brake system and parts</span>
+                        <span class="skill-tag">Failure Indication and Brake Application Device(FIBA)</span>
+                        <span class="skill-tag">Pressurized bio-toilet system</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-image">
+                    <img src="NCRTC_logo.png" alt="Company 2 Logo">
+                </div>
+                <div class="experience-content">
+                    <h3>NCRTC Intern</h3>
+                    <div class="company" ><a href="https://ncrtc.in/" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: color 0.3s ease";> National Capital Region Transport Corporation </a></div>
+                    <div class="duration">May 2024 - June 2024</div>
+                    <div class="description">
+                        During my internship at NCRTC, I gained in-depth knowledge of modern railway signaling and communication systems. 
+                        I learned about the European Rail Traffic Management System (ERTMS), including GSM-R/LTE-based communication and the features of 
+                        ETCS Level 1 and Level 2, which enhance train safety and efficiency. My experience also covered various signaling components in RRTS, 
+                        such as color light signals, buffer signals, route indicators, and onboard equipment like the train operator cab system. Additionally, I 
+                        explored trackside equipment like balises, point machines, axle counters, and essential control centers such as TMS, OCC, and BCC, which coordinate seamless train operations. 
+                        This hands-on exposure to LTE systems, signal equipment room cubicles, and advanced railway technologies provided me with valuable insights into railway automation and infrastructure management
+                    </div>
+                    <div class="skills">
+                        <span class="skill-tag">ERTMS</span>
+                        <span class="skill-tag">ETCS</span>
+                        <span class="skill-tag">RRTS Onboard Equipment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Event Experiences</h2>
+        <div class="event-timeline">
+            <div class="event-item">
+                <div class="event-content">
+                    <div class="event-image" style="margin-bottom: 1rem;">
+                        <img src="Exp2.jpg" alt="Technical event">
+                    </div>
+                    <h3>Participated in Wabtec Exceed 3.O</h3>
+                    &nbsp;
+                    <div class="company"><a href="https://www.wabteccorp.com/newsroom/press-releases/wabtec-announces-winners-for-its-exceed-30-campus-challenge-in-india" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: color 0.3s ease";> <b>Wabtec</b></a></div>
+                    &nbsp;
+                    <div class="duration">Feb 2025</div>
+                    &nbsp;
+                    <div class="description">
+                        As the first runner-up in the competition, representing Gati Shakti Vishwavidyalaya, Vadodara,
+                         I had the opportunity to present my project on ‘Automated Train Scheduling and Routing.’ This experience 
+                         allowed me to showcase my understanding of railway automation, optimization techniques, and the integration of technology in 
+                         train operations. This achievement was a significant milestone in my learning journey, enhancing both my technical and presentation skills.
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-content">
+                    <div class="experience-image" style="margin-bottom: 1rem;">
+                        <img src="EXp4.jpg" alt="Hackathon">
+                    </div>
+                    <h3>College Youth Ideathon</h3>
+                    &nbsp;
+                    <div class="company"><a href="https://youthideathon.in/" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: color 0.3s ease";> <b>IIT Delhi</b></a></div>
+                    &nbsp;
+                    <div class="duration">April 2025</div>
+                    &nbsp;
+                    <div class="description">
+                        I participated in my college's Youth Ideathon and was selected among the top 100 ideas for developing MedMap, a GIS-powered, AI-driven emergency healthcare platform. MedMap connects patients, 
+                        ambulances, and hospitals in real-time, providing live tracking of hospital resources and optimizing ambulance navigation to reduce response times by 30-50%. It integrates with government emergency services, 
+                        blood banks, and pharmacies, enhancing healthcare accessibility and disaster management.
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-content">
+                    <div class="experience-image" style="margin-bottom: 1rem;">
+                        <img src="Exp5.JPG" alt="Project Showcase">
+                    </div>
+                    <h3>Machspeed Madness</h3>
+                    &nbsp;
+                    <div class="company">Annual Tech-Fest (Epitome25, GSV)</div>
+                    &nbsp;
+                    <div class="duration">March 2025</div>
+                    &nbsp;
+                    <div class="description">
+                        I participated in the Machspeed Madness RC car competition, where my team designed an RC car using ESP32-to-ESP32 
+                        communication for wireless control. This experience enhanced my skills in embedded systems, wireless communication,
+                         and real-time vehicle control. Competing against strong teams, we secured 2nd position, showcasing our innovation 
+                         and technical expertise. The event provided valuable hands-on learning in IoT-based and teamwork, strengthening my 
+                         passion for robotics and embedded technology.
+                    </div>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-content">
+                    <div class="event4-image" style="margin-bottom: 1rem;">
+                        <img src="exp7.png" alt="image">
+                    </div>
+                    <h3>Robotic Competition</h3>
+                    &nbsp;
+                    <div class="company">ISRO</div>
+                    &nbsp;
+                    <div class="duration">Jan 2025</div>
+                    &nbsp;
+                    <div class="description">
+                        I participated in the ISRO Robotic Challenge-URSC, where my team developed an Autonomous Navigation for an Aerial Vehicle (ANAV) system. 
+                        Through this project, I gained hands-on experience in communication systems, integrating various sensors, and designing 
+                        the system architecture and algorithms. This challenge enhanced my understanding of autonomous robotics and real-world applications 
+                        of advanced navigation technologies.
+                    </div>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-content">
+                    <div class="event4-image" style="margin-bottom: 1rem;">
+                        <img src="exp8.webp" alt="Project Showcase">
+                    </div>
+                    <h3>RSS</h3>
+                    &nbsp;
+                    <div class="company">RSS</div>
+                    &nbsp;
+                    <div class="duration"> 2019</div>
+                    &nbsp;
+                    <div class="description">
+                        I served as the coordinator for children up to age 18 for an RSS event on Sharad Purnima, successfully organizing the event, 
+                        which included an RSS drill and a showcasing. This experience enhanced my leadership and event management skills while fostering 
+                        teamwork and discipline among the participants.
+                    </div>
+                </div>
+            </div>
+            <!-- here add more experiences -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/abhinavraj001"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abhinav-raj-chaurasia-393a7132b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Abhinav Raj.</p>
+    </footer>
+
+    <script src="port2.js"></script>
+    <script>
+        // Event timeline animation
+        const eventItems = document.querySelectorAll('.event-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        eventItems.forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html> 
